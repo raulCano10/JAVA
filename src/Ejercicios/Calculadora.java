@@ -17,33 +17,58 @@ public class Calculadora {
      */
     public static void main(String[] args) {
        
-        /**
-         * DECLARACION DE VARIABLES
-         */
-        double num1;
-        double num2;     
-        char operacion;
-        Scanner sc = new Scanner(System.in);  
-        
         try{
-            //----------------------------------------------------     
-            System.out.println("CALCULADORA BÁSICA");   
-            System.out.println("Introduzca el primer número");
-            num1 = sc.nextDouble();
+            Scanner scanner = new Scanner(System.in);
+            double num1, num2;
+            char operacion;
 
-            System.out.println("Introduzca el segundo número");
-            num2 = sc.nextDouble();
+            System.out.println("Calculadora básica en Java");
+            System.out.print("Ingresa el primer número: ");
+            num1 = scanner.nextDouble();
 
-            System.out.println("Introduzca la operacion");
-            operacion = sc.next().charAt(0);
+            System.out.print("Ingresa el segundo número: ");
+            num2 = scanner.nextDouble();
+
+            System.out.print("Ingresa la operación (+, -, *, /): ");
+            operacion = scanner.next().charAt(0);
+
+            double resultado = 0;
+            boolean operacionValida = true;
+
+            switch (operacion) {
+                case '+':
+                    resultado = num1 + num2;
+                    break;
+                case '-':
+                    resultado = num1 - num2;
+                    break;
+                case '*':
+                    resultado = num1 * num2;
+                    break;
+                case '/':
+                    if (num2 != 0) {
+                        resultado = num1 / num2;
+                    } else {
+                        System.out.println("Error: No se puede dividir entre cero.");
+                        operacionValida = false;
+                    }
+                    break;
+                default:
+                    System.out.println("Operación no válida.");
+                    operacionValida = false;
+            }
+
+            if (operacionValida) {
+                System.out.println("El resultado es: " + resultado);
+            }
+
+            scanner.close();
         }catch(Exception ex){
             System.out.println("ERROR CUIDADO!!!!!!");
             System.out.println("" + ex.getMessage());
             System.out.println("" + ex.toString());
         }
-        
-        
-        
+            
         
         
     }

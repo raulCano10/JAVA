@@ -125,13 +125,16 @@ public class Cadenas {
         System.out.println(arrayPartesFraseEspacios[37]);
         
         //PARTE 2:
-        //MAYUSCULAS
-        
+        //MAYUSCULAS              
+        System.out.println("Mayúsculas: " + frase1.toUpperCase()); // Convertir a mayúsculas
         
         //MINUSCULAS
-        
+        System.out.println("Minúsculas: " + frase1.toLowerCase()); // Convertir a minúsculas
         //PARTE 3:
         //Reemplaceis los espaciones por barra baja "_";
+        System.out.println("Minúsculas: " + frase1.replace(" ", "_")); // Convertir a minúsculas
+        
+        
     }
     
    

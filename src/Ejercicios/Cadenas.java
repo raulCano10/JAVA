@@ -134,7 +134,42 @@ public class Cadenas {
         //Reemplaceis los espaciones por barra baja "_";
         System.out.println("Minúsculas: " + frase1.replace(" ", "_")); // Convertir a minúsculas
         
-        
+         Scanner scanner = new Scanner(System.in);
+
+        // Solicitar al usuario que ingrese dos cadenas de texto
+        System.out.println("Ingrese la primera cadena de texto:");
+        cadena1 = scanner.nextLine();
+
+        System.out.println("Ingrese la segunda cadena de texto:");
+        String cadena2 = scanner.nextLine();
+
+        // Comparar las cadenas usando equals()
+        if (cadena1.equals(cadena2)) {
+            System.out.println("Las cadenas son exactamente iguales.");
+        } else {
+            System.out.println("Las cadenas no son exactamente iguales.");
+        }
+
+        // Comparar las cadenas usando equalsIgnoreCase()
+        if (cadena1.equalsIgnoreCase(cadena2)) {
+            System.out.println("Las cadenas son iguales (sin importar mayúsculas o minúsculas).");
+        } else {
+            System.out.println("Las cadenas no son iguales (sin importar mayúsculas o minúsculas).");
+        }
+
+        // Comparar las cadenas usando compareTo()
+        int resultado = cadena1.compareTo(cadena2);
+        if (resultado < 0) {
+            System.out.println("La primera cadena es menor alfabéticamente que la segunda.");
+        } else if (resultado > 0) {
+            System.out.println("La primera cadena es mayor alfabéticamente que la segunda.");
+        } else {
+            System.out.println("Las cadenas son iguales alfabéticamente.");
+        }
+
+        // Cerrar el Scanner
+        scanner.close();
+    
     }
     
    

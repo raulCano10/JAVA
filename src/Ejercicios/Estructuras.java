@@ -110,10 +110,7 @@ public class Estructuras {
         } else {
             System.out.println("Opción no válida.");
         }
-
-        scanner.close();
-        
-
+     
         /*
         Ejercicio 5 
         Un vendedor recibe un sueldo base mas un 10% extra por comisión de sus ventas, el 
@@ -296,7 +293,8 @@ public class Estructuras {
         //si no es válida (es decir, si no está entre 0 y 10), 
         //le pedirá que ingrese la calificación nuevamente. 
         //Luego, el programa continuará preguntando al usuario si desea ingresar otra calificación.
+             
         
-    }
     
+    }
 }

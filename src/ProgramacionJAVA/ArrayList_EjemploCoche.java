@@ -4,81 +4,95 @@
  */
 package ProgramacionJAVA;
 
-import Clases.Coche;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
- * Ejemplo completo que utiliza las 10 funciones básicas de ArrayList.
- * @author Raúl
+ *
+ * @author raul
  */
 public class ArrayList_EjemploCoche {
 
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
-        // 1. Declarar y crear un ArrayList de tipo Coche
-        ArrayList<Coche> listaCoches = new ArrayList<>();
-
+        
+        //Declarar una arrayList de coches
+        ArrayList<Coche> listaCoches = new ArrayList();
+        
         Coche coche1 = new Coche("SEAT");
         Coche coche2 = new Coche("AUDI");
         Coche coche3 = new Coche("CITROEN");
         
-        // 2. add(X): Agregar elementos al final del ArrayList
         listaCoches.add(coche1);
         listaCoches.add(coche2);
         listaCoches.add(coche3);
-
-        // Mostrar contenido inicial
-        System.out.println("Contenido inicial: " + listaCoches); // [Elemento 1, Elemento 2, Elemento 3]
-
-        // 3. add(posición, X): Insertar un elemento en una posición específica
-        listaCoches.add(1, new Coche("LEXUS"));
-        System.out.println("Después de add(1, \"new Coche(\"LEXUS\")\"): " + listaCoches); // [Elemento 1, Elemento Intermedio, Elemento 2, Elemento 3]
-
-        // 4. get(posición): Obtener un elemento de una posición específica
-        Coche cocheEnPosicion2 = listaCoches.get(2);
-        System.out.println("Coche en la posición 2: " + cocheEnPosicion2); // Elemento 2
-
-        // 5. remove(posición): Eliminar un elemento de una posición específica
-        Coche cocheEliminado = listaCoches.remove(0);
-        System.out.println("Elemento eliminado en posición 0: " + cocheEliminado);
-        System.out.println("Después de remove(0): " + listaCoches); // [Elemento Intermedio, Elemento 2, Elemento 3]
-
-        // 6. remove(X): Eliminar la primera ocurrencia de un objeto específico
-        boolean eliminadoObjeto = listaCoches.remove(coche3);
-        System.out.println("Se eliminó \"Elemento 2\": " + eliminadoObjeto);
-        System.out.println("Después de remove(\"Elemento 2\"): " + listaCoches); // [Elemento Intermedio, Elemento 3]
-
-        // 7. clear(): Vaciar el ArrayList
-        listaCoches.clear();
-        System.out.println("Después de clear(): " + listaCoches); // []
-
-        // 8. set(posición, X): Reemplazar un elemento en una posición específica
-        Coche coche4 = new Coche("MERCEDES");
-        Coche coche5 = new Coche("FERRARI");
-        Coche coche6 = new Coche("FORD");
-        listaCoches.add(coche4);
-        listaCoches.add(coche5);
-        listaCoches.set(1, coche6);
-        System.out.println("Después de set(1, \"Reemplazado\"): " + listaCoches); // [Original 1, Reemplazado]
-
-        // 9. contains(X): Verificar si el ArrayList contiene un elemento específico
-        boolean contiene = listaCoches.contains(coche4);
-        System.out.println("Contiene \"Original 1\": " + contiene); // true
-
-        // 10. indexOf(X): Obtener la posición de un elemento específico
-        int indice = listaCoches.indexOf(coche4);
-        System.out.println("Posición de \"Reemplazado\": " + indice); // 1      
-    
-        // Recorrer usando un iterador
-        System.out.println("Recorrido con iterador:");
-        Iterator<Coche> it = listaCoches.iterator();
-        while (it.hasNext()) {
-            it.next().pintaInfo();
+        
+        //Pintar la info de la lista de coches
+        for(Coche miCoche : listaCoches){
+            miCoche.pintaInfo();
         }
         
-        for (Coche coche : listaCoches) {
-            coche.pintaInfo();
+        System.out.println("--------------------------");
+        
+        //Iterator
+        Iterator<Coche> miIterador = listaCoches.iterator();
+        while(miIterador.hasNext()){
+            miIterador.next().pintaInfo();
         }
+    System.out.println("--------------------------");
+        //Añadir nuevo coche en la posicion 2
+        listaCoches.add(2, new Coche("LEXUS"));
+        
+        Coche coche4 = new Coche("LEXUS");
+        listaCoches.add(2, coche4);
+        listaCoches.add(2, coche4);
+        listaCoches.add(2, coche4);
+        listaCoches.add(2, coche4);
+        listaCoches.add(2, coche4);
+        
+        coche4.setModelo("MODELO1");
+        //Pintar la info de la lista de coches
+        for(Coche miCoche : listaCoches){
+            miCoche.pintaInfo();
+        }
+        
+         System.out.println("--------------------------");
+         
+         System.out.println(listaCoches);
+         
+         //Obtengo el coche que está en la posicion 2
+         Coche cochePosicion2 = listaCoches.get(2);
+         System.out.println(cochePosicion2);
+         cochePosicion2.pintaInfo();
+         
+         //Eliminar un che del array
+         Coche cocheEliminado = listaCoches.remove(2);
+         cocheEliminado.pintaInfo();
+         
+         //Modificar el coche de la posicion 6
+         listaCoches.set(6, coche1);
+         System.out.println(listaCoches);
+         //Como verificar si existe o no un coche en el arraylist de coches
+         boolean existeElCoche1 = listaCoches.contains(coche1);
+         System.out.println("¿Existe el coche 1? " + existeElCoche1);
+         
+         int posicionCoche1 = listaCoches.indexOf(coche1);
+         System.out.println("EL coche 1 se encuentra en la posicion " + posicionCoche1);
+         
+         listaCoches.remove(0);
+         
+         int posicionCoche1otravez = listaCoches.indexOf(coche1);
+         System.out.println("EL coche 1 se encuentra en la posicion " + posicionCoche1otravez);
+         
+         listaCoches.remove(5);
+         
+         int posicionCoche1otravezMas = listaCoches.indexOf(coche1);
+         System.out.println("EL coche 1 se encuentra en la posicion " + posicionCoche1otravezMas);
+         
+         //vaciar la lista completa
+         listaCoches.removeAll(listaCoches);
+         listaCoches.clear();
     }
-
 }

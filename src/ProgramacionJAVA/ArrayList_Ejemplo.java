@@ -6,11 +6,10 @@ package ProgramacionJAVA;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Scanner;
 
 /**
  *
- * @author Raúl
+ * @author raul
  */
 public class ArrayList_Ejemplo {
 
@@ -18,126 +17,113 @@ public class ArrayList_Ejemplo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //DECLARACIÓN Y CREACIÓN DE UN ARRAYLIST
+        //ARRAYLIST
+        ArrayList nombreArray = new ArrayList();
         
-        //Puede contener cualquier tipo de dato
-        ArrayList a = new ArrayList();   
-        a.add("Lenguaje");
-        a.add(3);
-        a.add('a');
-        a.add(23.5);
-
-        //Creamos un arraylist de cadenas
-        ArrayList<String> cadenas =new ArrayList<>();
+        nombreArray.add("cadena de texto");
+        nombreArray.add(3);
+        nombreArray.add('a');
+        nombreArray.add(23.5);
         
-        //Creamos un arraylist de numeros
-        ArrayList<Integer> num = new ArrayList<>();
+        ArrayList<String> nombreArrayString = new ArrayList();
         
-        //Funciones para trabajar con arrays
-        //1. size() --> Devuelve el número de elementos (int)
-        //2. add(X) --> Añade el objeto X al final. Devuelve true.
-        //3. add(posición, X) --> Inserta el objeto X en la posición indicada.
-        //4. get(posicion) --> Devuelve el elemento que está en la posición indicada.
-        //5. remove(posicion) --> Elimina el elemento que se encuentra en la posición indicada. Devuelve el elemento eliminado.
-        //6. remove(X) --> Elimina la primera ocurrencia del objeto X. Devuelve true si el elemento está en la lista.
-        //7. clear() --> Elimina todos los elementos.
-        //8. set(posición, X) --> Sustituye el elemento que se encuentra en la posición indicada por el objeto X. Devuelve el elemento sustituido.
-        //9. contains(X) --> Comprueba si la colección contiene al objeto X. Devuelve true o false.
-        //10. indexOf(X) --> Devuelve la posición del objeto X. Si no existe devuelve -1
-        
-        //RECORRER UN ARRAYLIST       
-        
-        //Con un buble FOR
-        for(int i = 0;i < cadenas.size();i++){
-            System.out.println(cadenas.get(i));      
-        }
-        
-        //Con un bucle foreach
-        //Si el array contiene objetos de tipos distintos o desconocemos el tipo:
-        for(Object n: num){
-            System.out.println(n);                 
-        }
-        
-        //Utilizando un objeto Iterator.
-        /*
-        La ventaja de utilizar un Iterador es que no necesitamos indicar el tipo de objetos que contiene el array.
-        Iterator tiene como métodos:
-        hasNext: devuelve true si hay más elementos en el array.
-        next: devuelve el siguiente objeto contenido en el array.
-        */
-        Iterator ite = num.iterator();       //se crea el iterador it para recorrer el array numeros                   
-        while(ite.hasNext()){                    //mientras queden elementos
-              System.out.println(ite.next());    //se obtienen y se muestran                                               
-        }
+        ArrayList<Integer> nombreArrayEntero = new ArrayList();
         
         
         
-        //EJEMPLO 1
-        //Ejemplo 1:
-        ArrayList<String> nombres = new ArrayList<>();
-        nombres.add("Ana");
-        nombres.add("Luisa");
-        nombres.add("Felipe");
+        ArrayList<ArrayList<Integer>> arrayLisdeArrayList = new ArrayList();
         
-        System.out.println(nombres); // [Ana, Luisa, Felipe]
-        
-        nombres.add(1, "Pablo");
-        System.out.println(nombres); // [Ana, Pablo, Luisa, Felipe]  
-        
-        nombres.remove(0);
-        System.out.println(nombres); // [Pablo, Luisa, Felipe]
-        
-        nombres.set(0,"Alfonso");    
-        System.out.println(nombres); // [Alfonso, Luisa, Felipe]  
-        
-        String primero = nombres.get(1);
-        String ultimo = nombres.get(nombres.size() - 1);
-        System.out.println("El primero es " + primero + " y el último es " + ultimo);  // Luisa Felipe
-        
-    //EJEMPLO 2
-    //Escribe un programa que lea números enteros 
-    //y los guarde en un ArrayList hasta que se lea un 0 
-    //y muestra:
-    //1. Los números leídos
-    //2. su suma
-    //3. Y crea una funcion que calcule su media
-    
-    Scanner sc = new Scanner(System.in);
-        ArrayList<Integer> numeros = new ArrayList<>();
-        int n;
+        //Funciones para trabajar con Arraylist
+        //- size: Devuelve el tamaño del array
+        //- add(X): Añade el objeto X al final y Devuelve TRUE.
+        //- add(posicion,X): Aáde un objeto en la posicion indicada.
+        //- remove(posicion): Elimina el elementoque se encuentra en la posicion indicada. Devuelve el elemento eliminado
+        //- remove(Objeto X): Elimina la primera ocurrencia del objeto X. Devuelve TRUE si el elemento está en la lista.
+        //- set(posicion, X): Sustituye el elemento que se encuentra en la posicion indicada or el objeto X. Devuelve el elemento sustituido.
+        //- clear(): Elimina todos los elementos de la lista.
+        //- get(posicion): Nos devuelve el elemento que se encuentra en la posicion indicada.
+        //- contains(X): Comprueba si la coleccion contiene el objeto X. Devuelve true o false.
+        //- indexOf(X): devuelve la posicion del objeto X. Si no existe devuelve -1
   
-        do {
-            System.out.println("Introduce números enteros. 0 para acabar: ");                                     
-            System.out.println("Numero: ");
-            n = sc.nextInt();
-            if (n != 0){
-                numeros.add(n);
-            }
-        }while (n != 0);
-       
-        System.out.println("Ha introducido: " + numeros.size() + " números:");
+        ArrayList<Coche> listaCoches = new ArrayList();
+        Coche coche1 = new Coche("Ferrari1");
+        listaCoches.add(coche1);
         
-        //mostrar el arrayList completo
-        System.out.println(numeros);
-       
-        //recorrido usando un iterador para mostrar un elemento por línea                                         
-        Iterator it = numeros.iterator();
-        while(it.hasNext()){
-              System.out.println(it.next());
-        }
-  
-        calcularMedia(numeros);
+        //Nos declaramos un arrayList de String
+        ArrayList<String> lista = new ArrayList();
+        String elemento1 = "Elemento1";
+        String elemento2 = "Elemento2";
+        String elemento3 = "Elemento3";
+              
+        //1. Añadir un nuevo elemento en la lista
+        lista.add(elemento1);
+        lista.add(elemento2);
+        lista.add(elemento3);             
         
-    }
-    
-    public static void calcularMedia(ArrayList<Integer> numeros){
-        //recorrido usando foreach para sumar los elementos
-        double suma = 0;
-        for(Integer i: numeros){
-            suma = suma + i;
+        //Mostrar contenido de la lista
+        System.out.println("1. " + lista);
+        
+        //2. Mostar tamaño de la lista
+        System.out.println("2. Tamaño de la lista: " + lista.size());
+        
+        //3. Añado un nuevo elemento en la poscion 2
+        lista.add(2,"Elemento Nuevo");
+        System.out.println("3. " +lista);
+        
+        //4. Obtener el elemento de una posicion concreta
+        String elementoPosicion2 = lista.get(2);
+        System.out.println("4. " +elementoPosicion2);
+        
+        //5. Eliminar el elemento de la posicion 1
+        lista.remove(1);
+        System.out.println("5. " +lista);
+        
+        //6. Eliminar un objeto concreto
+        lista.remove("Elemento3");
+        System.out.println("6. " +lista);
+                
+        //7. Limpiar una lista completamente
+        lista.clear();
+        System.out.println("7. " + lista);
+        //7.1 Otra forma
+        lista.removeAll(lista);
+        
+        lista.add("Coche1");
+        lista.add("Coche2");
+        lista.add("Coche3");
+        System.out.println(lista);
+        
+        //8. Modificar un elemento de la lista
+        lista.set(1, "CocheNuevo");
+        System.out.println("8. " + lista);
+        
+        //9. Verificar si el ArrayList continene un elemento
+        boolean existeCoche = lista.contains("Coche3");
+        System.out.println("9. Coche3 existe --> " + existeCoche);
+        
+        //10. obtener la posicion de un elemento especifico
+        int numeroPosicion = lista.indexOf("CocheNuevo");
+        System.out.println("10. CocheNuevo está en la posición --> " + numeroPosicion);
+         System.out.println("--------------------");
+        
+        //RECORRER UN ARRAYLIST
+        
+        //Con un bucle for
+        for (int i = 0; i < lista.size(); i++) {
+            System.out.println(lista.get(i));
         }
-        System.out.println("Suma: " + suma);
-        System.out.println("Media: " + suma/numeros.size());
+        System.out.println("--------------------");
+        //Con un foreach
+        for(String coche : lista){
+            System.out.println(coche);
+        }
+         System.out.println("--------------------");
+         
+        //Con un Iterador
+        Iterator miIterador = lista.iterator();
+        while(miIterador.hasNext()){
+            System.out.println(miIterador.next());
+        }
     }
     
 }

@@ -41,19 +41,19 @@ public class Fecha {
         
         //Si tomamos dos instante diferentes en el tiempo podemos ver los minutos y segundos que 
         //ha trascurrido entre ellos
-/*       
+       
         try {
             Thread.sleep(5000);
         } catch (InterruptedException ex) {
-            Logger.getLogger(Fecha.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(Fecha.class.getName()).log(Level.SEVERE, null, ex);
         }
-*/
+
         Instant intante2 = Instant.now();
    
         long diferenciaMinutos = ChronoUnit.MINUTES.between(intante1, intante2);
         long diferenciaSegundos = ChronoUnit.SECONDS.between(intante1, intante2);
-         System.out.println("diferenciaMinutos " + diferenciaMinutos);
-         System.out.println("Han pasado " + diferenciaSegundos + " segundazos");
+        System.out.println("diferenciaMinutos " + diferenciaMinutos);
+        System.out.println("Han pasado " + diferenciaSegundos + " segundazos");
          
          
          //CLASE LOCADATE
@@ -153,7 +153,7 @@ public class Fecha {
          Year año= Year.now();
          System.out.println("Es el año "+año+" bisiesto? -->"+año.isLeap());
 
-         Year año2=Year.of(2019);
+         Year año2=Year.of(2020);
          System.out.println("Es el año "+año2+" bisiesto? -->"+año2.isLeap());
     }
     

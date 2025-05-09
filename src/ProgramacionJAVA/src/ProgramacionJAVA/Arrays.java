@@ -17,7 +17,7 @@ public class Arrays {
         //ARRAYS UNIDIMENSIONALES
         
         String[] animales = {"perro", "gato", "conejo", "león"};
-        
+        int [] arrayEnteros = {1,2,3,4,5};
         //Muestro los valores del array.
         System.out.println(animales[0]);
         System.out.println(animales[1]);

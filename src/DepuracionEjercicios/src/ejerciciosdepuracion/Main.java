@@ -23,60 +23,48 @@ public class Main {
 
     */
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    public static int multiplicarYReducir(int a, int b) {
+     public static int multiplicarYReducir(int a, int b) {
         int producto = a * b;
         return producto % 10;
     }
+    /*
+        4. Evalúa 'producto % 10' y verifica su valor en watch.
+    */
+
 
     public static boolean contieneVocal(String texto) {
         return texto.contains("a") || texto.contains("e");
     }
+    
+    /*
+        5. Observa si 'texto.contains("a")' se evalúa a true o false con "Hola".
+        6. ¿Qué valor tiene 'texto.contains("A")' si lo pruebas con "Ana"?
+    */
 
     public static double dividir(int a, int b) {
         return a / b;
     }
+    /*
+        7. Coloca breakpoint en la línea de división con b = 0. ¿Qué error aparece al ejecutar?
+        8. Observa el tipo de excepción. ¿Qué clase la lanza? Añade un try y catch para capturar la excepcion
+
+    */
+    
 
     public static boolean esNegativo(int n) {
         return !(n >= 0);
     }
-
+    /*
+        9. Evalua la expresion !(n >= 0) para n = -5 en el watch
+        10. ¿Que valor devuelve la funcion cuando n = 0? 
+    */
     public static boolean sonIguales(String s1, String s2) {
         return s1 == s2;
     }
-
+     /*
+        11. Crea s1 = "hola" y s2 = new String("Hola"). ¿El watch de 's1 == s2' es true o false?
+        12. ¿Que operador se debería utilizar para que sean iguales?
+    */
     public static int contarPares(int[] nums) {
         int contador = 0;
         for (int n : nums) {
@@ -84,7 +72,12 @@ public class Main {
         }
         return contador;
     }
-
+    /*
+        13. ¿Que valor tiene contador al llegar n = 4?
+        14. Evalua en watch 'n % 2 == 0' para cada elemento.
+    */
+    
+    
     public static boolean invertir(boolean valor) {
         valor = !valor;
         return valor;
